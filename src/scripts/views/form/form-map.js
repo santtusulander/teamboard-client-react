@@ -3,11 +3,11 @@ import Action          from '../../actions';
 import UserAction      from '../../actions/user';
 import BroadcastAction from '../../actions/broadcast';
 
+import SettingsStore   from '../../stores/settings';
 import UserStore       from '../../stores/user';
 /**
  *
  */
-
 export default
 	{
 		registerForm: {
@@ -15,13 +15,13 @@ export default
 				{
 					name:     'email',
 					type:     'email',
-					label:    'Email',
+					label:    SettingsStore.getSetting('locale').AUTH_LABEL_EMAIL,
 					required: true
 				},
 				{
 					name:     'passwordRegister',
 					type:     'password',
-					label:    'Password',
+					label:    SettingsStore.getSetting('locale').AUTH_LABEL_PASSWORD,
 					title:    'Minimum of 8 characters required.',
 					pattern:  '.{8,}',
 					required: true
@@ -29,7 +29,7 @@ export default
 				{
 					name:     'passwordAgain',
 					type:     'password',
-					label:    'Confirm password',
+					label:    SettingsStore.getSetting('locale').AUTH_LABEL_PWCONFIRM,
 					title:    'Minimum of 8 characters required.',
 					pattern:  '.{8,}',
 					required: true
@@ -39,8 +39,8 @@ export default
 				submit: () => {
 					return page.show('/login');
 				},
-				action:      'Login',
-				description: 'Already registered?'
+				action:      SettingsStore.getSetting('locale').AUTH_HEADER_LOGIN,
+				description: SettingsStore.getSetting('locale').AUTH_MESSAGE_ALREADYREGISTERED
 			},
 			submit: (state) => {
 				return UserAction.register(state).then(() => {
@@ -54,20 +54,20 @@ export default
 				});
 			},
 			help:   'Passwords must be at least 8 characters long.',
-			action: 'Register'
+			action: SettingsStore.getSetting('locale').AUTH_LABEL_REGISTER
 		},
 		loginForm: {
 			fields: [
 				{
 					name:     'email',
 					type:     'email',
-					label:    'Email',
+					label:    SettingsStore.getSetting('locale').AUTH_LABEL_EMAIL,
 					required: true
 				},
 				{
 					name:     'password',
 					type:     'password',
-					label:    'Password',
+					label:    SettingsStore.getSetting('locale').AUTH_LABEL_PASSWORD,
 					required: true
 				}
 			],
@@ -75,21 +75,22 @@ export default
 				submit: () => {
 					return page.show('/register');
 				},
-				action:      'Register',
-				description: 'Not registered?'
+				action:      SettingsStore.getSetting('locale').AUTH_HEADER_REGISTER,
+				description: SettingsStore.getSetting('locale').AUTH_MESSAGE_NOTREGISTERED
 			},
 			submit: (state) => {
 				return UserAction.login(state).then(() => {
 					return page.show('/boards');
 				});
-			}
+			},
+			action: SettingsStore.getSetting('locale').AUTH_HEADER_LOGIN
 		},
 	guestLoginForm: {
 		fields: [
 			{
 				name:     'username',
 				type:     'text',
-				label:    'Username',
+				label:    SettingsStore.getSetting('locale').AUTH_LABEL_USERNAME,
 				title:    'Username must be at least 3 characters.',
 				pattern:  '.{3,}',
 				required: true
@@ -107,8 +108,8 @@ export default
 					return page.show(`/userlogin/boards/${boardID}/access/${accessCode}`);
 				}
 			},
-			action:      'Log in',
-			description: 'Got an account?'
+			action:      SettingsStore.getSetting('locale').AUTH_LABEL_LOGIN,
+			description: SettingsStore.getSetting('locale').AUTH_MESSAGE_ALREADYREGISTERED
 		},
 		submit: (state, boardID, accessCode) => {
 			let credentials = Object.assign(state, {
@@ -126,13 +127,13 @@ export default
 			{
 				name:     'email',
 				type:     'email',
-				label:    'Email',
+				label:    SettingsStore.getSetting('locale').AUTH_LABEL_EMAIL,
 				required: true
 			},
 			{
 				name:     'password',
 				type:     'password',
-				label:    'Password',
+				label:    SettingsStore.getSetting('locale').AUTH_LABEL_PASSWORD,
 				required: true
 			}
 		],
@@ -147,7 +148,7 @@ export default
 			});
 
 		},
-		action: 'Login'
+		action: SettingsStore.getSetting('locale').AUTH_HEADER_LOGIN
 	}
 	}
 

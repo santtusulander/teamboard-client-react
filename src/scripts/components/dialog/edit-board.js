@@ -107,11 +107,10 @@ export default React.createClass({
 					{SettingsStore.getSetting('locale').MODAL_HEADER_BOARDEDIT}
 				</section>
 				<section className="dialog-content">
-
 					<label htmlFor="board-name">
-						{console.dir(SettingsStore.getSetting('locale'))}
+						{SettingsStore.getSetting('locale').MODAL_LABEL_BOARDNAME}
 					</label>
-					<input name="board-name" placeholder="Board Name"
+					<input name="board-name" placeholder={SettingsStore.getSetting('locale').MODAL_LABEL_BOARDNAME}
 						valueLink={this.linkState('name')} autoFocus={true} />
 					<div className="preview-container">
 						<Minimap

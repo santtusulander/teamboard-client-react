@@ -1,6 +1,8 @@
 import page            from 'page';
 import UserAction      from '../../actions/user';
 import BroadcastAction from '../../actions/broadcast';
+
+import SettingsStore   from '../../stores/settings';
 /*
  *
  */
@@ -14,7 +16,7 @@ export default {
 			'currentView'
 		],
 		loginSettings: {
-			title: 'Change password',
+			title: SettingsStore.getSetting('locale').MODAL_HEADER_BOARDEDIT,
 			fields: [
 				{
 					name:     'oldPassword',

@@ -18,38 +18,38 @@ export default React.createClass({
 	},
 
 	render() {
-	var Decorators = [{
-	component: React.createClass({
-		render() {
-		return (
-			<div
-			onClick={this.props.previousSlide}>
-			<span className="fa fa-fw fa-chevron-left" />
-			</div>
-		)
-		}
-	}),
-	position: 'CenterLeft',
-	style: {
-		padding: 20
-	}
-	},
-	{
-	component: React.createClass({
-		render() {
-		return (
-			<div
-			onClick={this.props.nextSlide}>
-			<span className="fa fa-fw fa-chevron-right" />
-			</div>
-		)
-		}
-	}),
-	position: 'CenterRight',
-	style: {
-		padding: 20
-	}
-	}];
+		let Decorators = [{
+			component: React.createClass({
+				render() {
+					return (
+						<div
+						onClick={this.props.previousSlide}>
+						<span className="fa fa-fw fa-chevron-left" />
+						</div>
+					)
+				}
+			}),
+			position: 'CenterLeft',
+			style: {
+				padding: 20
+			}
+		},
+			{
+			component: React.createClass({
+				render() {
+					return (
+						<div
+						onClick={this.props.nextSlide}>
+						<span className="fa fa-fw fa-chevron-right" />
+						</div>
+					)
+				}
+			}),
+			position: 'CenterRight',
+			style: {
+				padding: 20
+			}
+		}];
 		return (
 			<Dialog className="info" viewProfile="review"
 					onDismiss={this.props.onDismiss}>
