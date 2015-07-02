@@ -9,7 +9,6 @@ import BoardStore    from '../stores/board';
 import SettingsStore from '../stores/settings';
 
 import BoardAction     from '../actions/board';
-import TicketAction    from '../actions/ticket';
 import SettingsAction  from '../actions/settings';
 import BroadcastAction from '../actions/broadcast';
 
@@ -66,6 +65,8 @@ export default React.createClass({
 			showExportBoardDialog: false,
 			showShareBoardDialog:  false,
 			reviewActive:          false,
+			selectMode:            false,
+			reviewTickets:         [],
 			pollHandle:            null
 		});
 	},
@@ -134,8 +135,22 @@ export default React.createClass({
 		})
 	},
 
+	setReviewTickets(ticket, setForReview) {
+		let newArray = this.state.reviewTickets.slice();
+		newArray.push(ticket);
+		if(newArray.length > 0 && !setForReview){
+			newArray = newArray.filter((item) => {
+				return item.id !== ticket.id;
+			})
+		}
+		
+		this.setState({
+			reviewTickets: newArray
+		});
+	},
+
 	sendTicketsForReview() {
-		return BoardStore.getTickets(this.props.id).toJS().filter ((item) => {
+		return this.state.reviewTickets.filter ((item) => {
 			return item.content !== "" || item.heading !== "" || item.comments.length !== 0
 		});
 	},
@@ -173,7 +188,8 @@ export default React.createClass({
 				<div className="content">
 					<Scrollable board={this.state.board}
 							minimap={this.state.showMinimap}>
-						<BoardComponent board={this.state.board}
+						<BoardComponent selectMode={this.state.selectMode}
+						setReviewTickets={this.setReviewTickets} board={this.state.board}
 							snap={this.state.snapToGrid} />
 					</Scrollable>
 				</div>
@@ -207,6 +223,15 @@ export default React.createClass({
 				},
 				icon:   'magnet',
 				active: this.state.snapToGrid
+			},
+			{
+				onClick: () => {
+					this.setState({
+						selectMode: !this.state.selectMode
+					});
+				},
+				icon:   'user',
+				active: this.state.selectMode
 			},
 			{
 				onClick: () => {

@@ -24,18 +24,21 @@ export default React.createClass({
 			if(!props.ticket instanceof Ticket) throw new Error();
 		},
 		snap:  React.PropTypes.bool,
-		board: React.PropTypes.string.isRequired
+		board: React.PropTypes.string.isRequired,
+		selectMode: React.PropTypes.bool,
+		setReviewTickets: React.PropTypes.func,
 	},
 
 	getDefaultProps() {
-		return { snap: false }
+		return { snap: false, selectMode: false }
 	},
 
 	getInitialState() {
 		return {
 			x: this.props.ticket.position.x,
 			y: this.props.ticket.position.y,
-			showEditDialog: false
+			showEditDialog:   false,
+			setForReview:     false
 		}
 	},
 
@@ -46,7 +49,8 @@ export default React.createClass({
 		let hasStateChanged = (
 			prevState.x                 !== nextState.x              ||
 			prevState.y                 !== nextState.y              ||
-			prevState.showEditDialog    !== nextState.showEditDialog
+			prevState.showEditDialog    !== nextState.showEditDialog ||
+			prevState.setForReview      !== nextState.setForReview
 		);
 
 		let havePropsChanged = (
@@ -60,10 +64,18 @@ export default React.createClass({
 		return hasStateChanged || havePropsChanged || isTweening;
 	},
 
+	onTicketDoubleTap(){
+		if(!this.props.selectMode)
+			this.toggleEditDialog();
+		else {
+			this.setState({setForReview: !this.state.setForReview});
+			this.props.setReviewTickets(this.props.ticket, this.state.setForReview);
+		}
+	},
+
 	componentDidMount() {
 		this.hammer = doubletap(this.getDOMNode());
-		this.hammer.on('doubletap', this.toggleEditDialog);
-
+		this.hammer.on('doubletap', this.onTicketDoubleTap);
 		this.draggable.on('dragEnd', () => {
 			if(this.draggable && !this.props.ticket.id.startsWith('dirty_')) {
 				let position = this.draggable.position;
@@ -125,11 +137,15 @@ export default React.createClass({
 	},
 
 	render() {
+		let markedForReview = "";
+		if(this.state.setForReview)
+			markedForReview = " is-selected"
 		let style = {
 			ticket: {
 				top:    this.getTweeningValue('y'),
 				left:   this.getTweeningValue('x'),
 				zIndex: this.props.ticket.position.z
+
 			},
 			color: {
 				backgroundColor: this.props.ticket.color
@@ -149,8 +165,9 @@ export default React.createClass({
 		}
 
 		return (
-			<div className="ticket" style={style.ticket}>
-				<div className="color" style={style.color}></div>
+			<div className={`ticket${markedForReview}`} style={style.ticket}>
+				<div className="color" style={style.color}>
+				</div>
 				<div className="heading">
 					{this.props.ticket.heading}
 				</div>

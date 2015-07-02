@@ -19,7 +19,8 @@ export default React.createClass({
 		board: (props) => {
 			if(!props.board instanceof Board) throw new Error();
 		},
-		snap: React.PropTypes.bool
+		snap: React.PropTypes.bool,
+		selectMode: React.PropTypes.bool
 	},
 
 	getDefaultProps() {
@@ -101,8 +102,9 @@ export default React.createClass({
 		}
 		return this.props.board.tickets.map((ticket) => {
 			return (
-				<TicketComponent key={ticket.id} snap={this.props.snap}
-					board={this.props.board.id} ticket={ticket} />
+				<TicketComponent setReviewTickets={this.props.setReviewTickets}
+				selectMode={this.props.selectMode} key={ticket.id} snap={this.props.snap}
+				board={this.props.board.id} ticket={ticket} />
 			);
 		});
 	}
