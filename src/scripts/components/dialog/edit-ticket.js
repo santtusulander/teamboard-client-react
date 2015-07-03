@@ -23,7 +23,8 @@ export default React.createClass({
 			if(!props.ticket instanceof Ticket) throw new Error();
 		},
 		board:     React.PropTypes.string.isRequired,
-		onDismiss: React.PropTypes.func.isRequired
+		onDismiss: React.PropTypes.func.isRequired,
+		deleteFromReview: React.PropTypes.func
 	},
 
 	getInitialState() {
@@ -40,6 +41,7 @@ export default React.createClass({
 		TicketAction.delete({ id: this.props.board }, {
 			id: this.props.ticket.id
 		});
+		this.props.deleteFromReview(this.props.ticket, false);
 		return this.props.onDismiss();
 	},
 

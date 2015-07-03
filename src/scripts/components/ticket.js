@@ -69,6 +69,7 @@ export default React.createClass({
 			this.toggleEditDialog();
 		else {
 			this.setState({setForReview: !this.state.setForReview});
+
 			this.props.setReviewTickets(this.props.ticket, this.state.setForReview);
 		}
 	},
@@ -152,8 +153,8 @@ export default React.createClass({
 			}
 		}
 		let editTicketDialog = !this.state.showEditDialog ? null : (
-			<EditTicketDialog board={this.props.board}
-				ticket={this.props.ticket}
+			<EditTicketDialog board={this.props.board} ticket={this.props.ticket}
+				deleteFromReview={this.props.setReviewTickets}
 				onDismiss={this.toggleEditDialog} />
 		);
 

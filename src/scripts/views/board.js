@@ -143,7 +143,6 @@ export default React.createClass({
 				return item.id !== ticket.id;
 			})
 		}
-		
 		this.setState({
 			reviewTickets: newArray
 		});

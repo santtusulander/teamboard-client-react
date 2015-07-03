@@ -25,6 +25,7 @@ const Marker = React.createClass({
 	},
 
 	render() {
+		console.log(this.props.ticket)
 		let style = {
 			top:  Math.round(this.props.scale * this.props.ticket.position.y),
 			left: Math.round(this.props.scale * this.props.ticket.position.x),
