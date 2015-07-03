@@ -18,7 +18,8 @@ const Ticket = immutable.Record({
 	content:  '',
 	heading:  '',
 	comments: [],
-	position: new Position()
+	position: new Position(),
+	setForReview: false
 });
 
 Ticket.Width    = 192;

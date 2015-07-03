@@ -25,7 +25,8 @@ const Marker = React.createClass({
 	},
 
 	render() {
-		console.log(this.props.ticket)
+		let markedForReview = !this.props.ticket.setForReview ? null :
+			<span className="fa fa-fw fa-eye"/>
 		let style = {
 			top:  Math.round(this.props.scale * this.props.ticket.position.y),
 			left: Math.round(this.props.scale * this.props.ticket.position.x),
@@ -36,7 +37,11 @@ const Marker = React.createClass({
 			zIndex:          this.props.ticket.position.z,
 			backgroundColor: this.props.ticket.color
 		}
-		return <div className="marker" style={style} />;
+		return (
+			<div className="marker" style={style}>
+				{markedForReview}
+			</div>
+		);
 	}
 });
 

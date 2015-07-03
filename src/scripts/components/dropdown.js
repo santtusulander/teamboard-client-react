@@ -20,6 +20,7 @@ const DropdownItem = React.createClass({
 	},
 
 	render() {
+
 		let itemClasses = React.addons.classSet({
 			item:     true,
 			disabled: this.props.disabled
@@ -32,7 +33,7 @@ const DropdownItem = React.createClass({
 		);
 		return (
 			<li className={itemClasses} id={"options-" + this.props.icon} onClick={this.props.onClick}>
-				{icon}{this.props.content}
+				{flag}{icon}{this.props.content}
 			</li>
 		);
 	}

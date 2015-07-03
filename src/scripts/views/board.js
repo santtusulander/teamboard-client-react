@@ -149,9 +149,11 @@ export default React.createClass({
 	},
 
 	sendTicketsForReview() {
-		return this.state.reviewTickets.filter ((item) => {
-			return item.content !== "" || item.heading !== "" || item.comments.length !== 0
-		});
+		let ticketsToFilter = this.state.reviewTickets.length !== 0 ?
+			this.state.reviewTickets : BoardStore.getTickets(this.props.id).toJS();
+			return ticketsToFilter.filter ((item) => {
+				return item.content !== "" || item.heading !== "" || item.comments.length !== 0
+			});
 	},
 
 	render() {

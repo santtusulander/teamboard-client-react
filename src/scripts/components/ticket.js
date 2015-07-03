@@ -38,7 +38,7 @@ export default React.createClass({
 			x: this.props.ticket.position.x,
 			y: this.props.ticket.position.y,
 			showEditDialog:   false,
-			setForReview:     false
+			setForReview:     this.props.ticket.setForReview
 		}
 	},
 
@@ -69,8 +69,11 @@ export default React.createClass({
 			this.toggleEditDialog();
 		else {
 			this.setState({setForReview: !this.state.setForReview});
-
 			this.props.setReviewTickets(this.props.ticket, this.state.setForReview);
+			TicketAction.update({ id: this.props.board }, {
+				id: this.props.ticket.id,
+				setForReview: this.state.setForReview
+			})
 		}
 	},
 
@@ -101,7 +104,6 @@ export default React.createClass({
 				});
 			}
 		});
-
 	},
 
 	componentWillUnmount() {
