@@ -31,6 +31,7 @@ export default {
 		PROFILE_INFO:'Profile information',
 		PROFILE_ENTERUSER:'Enter a username',
 		PROFILE_YOURNAME:'Your username:',
+		PROFILE_YOURAVATAR:'Your Avatar:',
 		//Submit button text = DONEBUTTON
 
 		PROFILE_CHANGEPW:'Change password',
@@ -142,7 +143,7 @@ export default {
 		PROFILE_INFO:'Profiilin tiedot',
 		PROFILE_ENTERUSER:'Anna käyttäjänimi',
 		PROFILE_YOURNAME:'Käyttäjänimesi:',
-
+		PROFILE_YOURAVATAR:'Avatarisi:',
 		PROFILE_CHANGEPW:'Vaihda salasana',
 		PROFILE_CURRENTPW:'Anna nykyinen salasanasi',
 		PROFILE_NEWPW:'Anna uusi salasana',
@@ -251,7 +252,7 @@ export default {
 		PROFILE_INFO:'Profil information',
 		PROFILE_ENTERUSER:'Välj ett användarnamn',
 		PROFILE_YOURNAME:'Ditt användarnamn:',
-
+		PROFILE_YOURAVATAR: 'Din Avatar',
 		PROFILE_CHANGEPW:'Ändra lösenord',
 		PROFILE_CURRENTPW:'Ge ditt nuvarande lösenord',
 		PROFILE_NEWPW:'Ge ett nytt lösenord',
@@ -361,7 +362,7 @@ export default {
 		PROFILE_INFO:'информация профиля',
 		PROFILE_ENTERUSER:'введите имя пользователя',
 		PROFILE_YOURNAME:'ваше имя пользователя:',
-
+		PROFILE_YOURAVATAR: 'Ваш аватар',
 		PROFILE_CHANGEPW:'изменить пароль',
 		PROFILE_CURRENTPW:'Введите текущий пароль',
 		PROFILE_NEWPW:'Введите новый пароль',

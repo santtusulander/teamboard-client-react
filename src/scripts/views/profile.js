@@ -5,6 +5,7 @@ import Navigation   from '../components/navigation';
 import Broadcaster  from '../components/broadcaster';
 import ProfileForms from '../views/form/profile-forms';
 import BroadcastAction from '../actions/broadcast';
+
 /**
  *
  */
@@ -28,8 +29,7 @@ export default React.createClass({
 		this.state.name;
 		switch(field.type){
 			case 'submit': return (
-					<input name={field.name} type={"submit"}
-					value={"Hello"} {...controlattrs} />
+					<input name={field.name} type={"submit"} {...controlattrs} />
 				);
 			case 'text':
 			case 'password':
@@ -80,7 +80,7 @@ export default React.createClass({
 				pattern:   field.pattern,
 				required:  field.required,
 				className: field.className,
-				value:     field.buttonaction,
+				value:     field.action,
 				onChange:  field.onChange
 			}
 			return (

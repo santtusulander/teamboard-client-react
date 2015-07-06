@@ -1,13 +1,14 @@
 import page            from 'page';
 import UserAction      from '../../actions/user';
 import BroadcastAction from '../../actions/broadcast';
-
+import listener        from '../../mixins/listener';
 import SettingsStore   from '../../stores/settings';
 /*
  *
  */
 
 export default {
+		mixins: [listener(SettingsStore)],
 		fieldNames: [
 			'oldPassword',
 			'newPassword',
@@ -17,26 +18,26 @@ export default {
 			'avatar'
 		],
 		loginSettings: {
-			title: SettingsStore.getSetting('locale').MODAL_HEADER_BOARDEDIT,
+			title: SettingsStore.getSetting('locale').PROFILE_SETTINGS,
 			fields: [
 				{
 					name:     'oldPassword',
 					type:     'password',
-					label:    'Enter current password',
+					label:    SettingsStore.getSetting('locale').PROFILE_CURRENTPW,
 					pattern:  '.{8,}',
 					required: true
 				},
 				{
 					name:     'newPassword',
 					type:     'password',
-					label:    'Enter a new password',
+					label:    SettingsStore.getSetting('locale').PROFILE_NEWPW,
 					pattern:  '.{8,}',
 					required: true
 				},
 				{
 					name:     'newPasswordAgain',
 					type:     'password',
-					label:    'Confirm new password',
+					label:    SettingsStore.getSetting('locale').PROFILE_CONFPW,
 					pattern:  '.{8,}',
 					required: true
 				},
@@ -44,7 +45,7 @@ export default {
 					name:     'submitPassword',
 					type:     'submit',
 					className: 'btn-primary',
-					action:    'Update Password'
+					action:    SettingsStore.getSetting('locale').DONEBUTTON
 				}
 			],
 			submit: (state) => {
@@ -58,7 +59,7 @@ export default {
 			action: 'Save changes'
 		},
 		profileSettings: {
-			title: 'Profile information',
+			title: SettingsStore.getSetting('locale').PROFILE_INFO,
 			fields: [
 				{
 					name:     'avatar',
