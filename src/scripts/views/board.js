@@ -45,7 +45,7 @@ export default React.createClass({
 	},
 
 	mixins: [
-		listener(UserStore, BoardStore, SettingsStore),
+		listener(UserStore, BoardStore, SettingsStore)
 	],
 
 	onChange() {
@@ -81,8 +81,8 @@ export default React.createClass({
 		// Poll server every 10 seconds to indicate we're still alive!
 		let self = this;
 		let handle = setInterval(function() {
-			      self.setUserActivity({isActive:true, isPoll:true})
-			    }, 10000);
+                self.setUserActivity({isActive:true, isPoll:true})
+                }, 10000);
 		this.setState({pollHandle: handle});
 	},
 
@@ -114,7 +114,7 @@ export default React.createClass({
 		else {
 			BroadcastAction.add({
 				type:    'broadcast',
-				content: 'You do not have any tickets to review!'
+				content: SettingsStore.getSetting('locale').LOGIN_LOGIN
 			});
 		}
 	},
@@ -227,7 +227,7 @@ export default React.createClass({
 			}
 			];
 
-			let adminOnlyControls= [
+			let adminOnlyControls = [
 			{
 				icon:    'pencil',
 				active:  this.state.showEditBoardDialog,
@@ -242,7 +242,7 @@ export default React.createClass({
 
 		];
 		if(this.props.user.type === User.Type.User) {
-			let currentRole    = BoardStore.getUserRole(this.state.board.id, this.props.user.id);
+			let currentRole = BoardStore.getUserRole(this.state.board.id, this.props.user.id);
 			if (currentRole === "admin") {
 				controls = adminOnlyControls.concat(controls);
 			}

@@ -3,6 +3,8 @@ import React from 'react/addons';
 import Board       from '../../models/board';
 import BoardAction from '../../actions/board';
 
+import SettingsStore from '../../stores/settings';
+
 import Dialog           from '../../components/dialog';
 import BoardExporter    from '../../components/board-exporter';
 
@@ -30,14 +32,14 @@ export default React.createClass({
             <Dialog className="dialog-edit-board"
                     onDismiss={this.props.onDismiss}>
                 <section className="dialog-header">
-                    Export Board
+                    {SettingsStore.getSetting('locale').EXPORTBOARD_TITLE}
                 </section>
                 <section className="dialog-content">
                     <BoardExporter boardID={id} />
                 </section>
                 <section className="dialog-footer">
                     <button className="btn-primary" onClick={this.submit}>
-                        Done
+                        {SettingsStore.getSetting('locale').DONEBUTTON}
                     </button>
                 </section>
             </Dialog>

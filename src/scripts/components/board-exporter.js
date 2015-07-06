@@ -1,5 +1,6 @@
 import React     from 'react';
 import UserStore from '../stores/user';
+import SettingsStore   from '../stores/settings';
 
 const Format = {
 	CSV:       'csv',
@@ -34,10 +35,10 @@ export default React.createClass({
 
 		return (
 			<section className="board-exporter">
-				<label>Export Format</label>
+				<label>{SettingsStore.getSetting('locale').EXPORTBOARD_FORMAT}</label>
 				<div className="input-group">
 					<div className="select">
-						<select onChange={this.onChange}
+						<select id={"export-select"} onChange={this.onChange}
 								defaultValue={this.state.format}>
 							{this.renderFormats()}
 						</select>
@@ -45,7 +46,7 @@ export default React.createClass({
 					</div>
 					<a className="btn btn-secondary" href={exportURL}
 							target="_blank">
-						Export
+						{SettingsStore.getSetting('locale').EXPORTBOARD_EXPBUTTON}
 					</a>
 				</div>
 			</section>
@@ -54,7 +55,7 @@ export default React.createClass({
 
 	renderFormats() {
 		return Object.keys(Format).map((key) => {
-			return <option key={key} value={Format[key]}>{key}</option>;
+			return <option key={key} value={Format[key]} id={"export-select-" + key}>{key}</option>;
 		});
 	}
 });

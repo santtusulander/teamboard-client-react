@@ -3,6 +3,8 @@ import React from 'react/addons';
 import Board       from '../../models/board';
 import BoardAction from '../../actions/board';
 import Dialog      from '../../components/dialog';
+import SettingsStore from '../../stores/settings';
+
 /**
  *
  */
@@ -50,7 +52,9 @@ export default React.createClass({
         let shareButton = (
             <button className={`btn-${shareButtonClass}`}
                     onClick={shareButtonClick}>
-                { sharedURL.length > 0 ? 'Hide' : 'Share' }
+                { sharedURL.length > 0 ?
+                    SettingsStore.getSetting('locale').SHARE_HIDE :
+                    SettingsStore.getSetting('locale').SHARE_SHOW }
             </button>
         );
 
@@ -58,15 +62,17 @@ export default React.createClass({
             <Dialog className="dialog-edit-board"
                     onDismiss={this.props.onDismiss}>
                 <section className="dialog-header">
-                    Share board
+                    {SettingsStore.getSetting('locale').SHARE_TITLE}
                 </section>
                 <section className="dialog-content">
 
-                    <label htmlFor="board-share">Shared link</label>
+                    <label htmlFor="board-share">
+                        {SettingsStore.getSetting('locale').SHARE_LINK}
+                    </label>
                     <section className="input-group">
                         <input ref="shareInput"
                                onClick={this.highlight}
-                               name="board-share" placeholder="Shared link"
+                               name="board-share" placeholder={SettingsStore.getSetting('locale').SHARE_LINK}
                                readOnly={true} value={sharedURL} tabIndex={-1}/>
                         {shareButton}
                     </section>
@@ -74,7 +80,7 @@ export default React.createClass({
                 </section>
                 <section className="dialog-footer">
                     <button className="btn-primary" onClick={this.submit}>
-                        Done
+                      {SettingsStore.getSetting('locale').DONEBUTTON}
                     </button>
                 </section>
             </Dialog>

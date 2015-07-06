@@ -1,246 +1,441 @@
 export default {
 	en: {
-		'AUTH_HEADER_REGISTER': 'Register',
-		'AUTH_HEADER_LOGIN': 'Login',
-		'AUTH_MESSAGE_EMPTYFIELDS': 'Please enter your email and password.',
-		'AUTH_MESSAGE_EMPTYUSERNAME': 'Please enter your username.',
-		'AUTH_MESSAGE_PWCONFIRMERROR': 'Password mismatch',
-		'AUTH_MESSAGE_EMAILERROR': 'Invalid email',
-		'AUTH_MESSAGE_NOTREGISTERED': 'Not registered?',
-		'AUTH_MESSAGE_ALREADYREGISTERED': 'Already registered?',
-		'AUTH_LABEL_EMAIL': 'Email',
-		'AUTH_LABEL_PASSWORD': 'Password',
-		'AUTH_LABEL_USERNAME': 'Username',
-		'AUTH_LABEL_PWCONFIRM': 'Confirm password',
-		'AUTH_LABEL_REGISTER': 'Register',
-		'AUTH_LABEL_SIGNIN': 'Sign in',
+		//DROPDOWN
+		DROPDOWN_PROFILE: 'Profile',
+		DROPDOWN_LOCALE: 'Language',
+		DROPDOWN_FEEDBACK: 'Feedback',
+		DROPDOWN_ABOUT: 'About',
+		DROPDOWN_LOGOUT: 'Logout',
 
-		'LABEL_PRIVATE': 'Private',
-		'LABEL_PUBLIC': 'Public',
+		//UNIVERSAL
+		NOTFOUND: 'Not found',
+		FORBIDDEN: 'Forbidden',
+		PASSWORD: 'Password',
+		EMAIL: 'E-mail',
+		PASSWORDMATCH: 'Passwords match',
+		PASSWORDMISMATCH: 'Password mismatch!',
+		CANCELBUTTON: 'Cancel',
+		DONEBUTTON: 'Done',
+		CLOSEBUTTON: 'Close',
 
-		'TOPBAR_LABEL_BOARDS': 'Boards',
-		'TOPBAR_LABEL_CREATEBOARD': 'Create board',
-		'TOPBAR_LABEL_CREATETICKET': 'Create ticket',
+		//LOGIN
+		LOGIN_LOGIN: 'Login',
+		LOGIN_REGISTER: 'Register',
+		LOGIN_PASSWORDLENGTH: 'Password must be at least 8 characters long.',
+		LOGIN_REGISTERFAIL: 'Registration failed!',
 
-		'SIDEBAR_LABEL_BOARDS': 'Boards',
-		'SIDEBAR_LABEL_LOGOUT': 'Log out',
+		//PROFILE
+		PROFILE_WORKSPACE: 'Workspace',
 
-		'MODAL_HEADER_NEWBOARD': 'Create a new board',
-		'MODAL_HEADER_PEOPLEVIEW': 'People on this board',
-		'MODAL_HEADER_BOARDEDIT': 'Edit board',
-		'MODAL_HEADER_PEOPLEADD': 'Invite people',
-		'MODAL_HEADER_REMOVEBOARD': 'Delete board',
-		'MODAL_HEADER_REMOVEBOARDS': 'Delete boards',
-		'MODAL_HEADER_REMOVETICKET': 'Delete ticket',
-		'MODAL_HEADER_REMOVETICKETS': 'Delete tickets',
-		'MODAL_HEADER_TEMPLATES': 'Workflow templates',
-		'MODAL_HEADER_TEMPLATESELECT': 'Select workflow template:',
-		'MODAL_MESSAGE_BOARDREMOVE': 'Are you sure you want to delete board',
-		'MODAL_MESSAGE_BOARDSREMOVE': 'Are you sure you want to delete',
-		'MODAL_MESSAGE_BOARDS': 'boards',
-		'MODAL_MESSAGE_TICKETREMOVE': 'Are you sure you want to delete ticket',
-		'MODAL_MESSAGE_TICKETSREMOVE': 'Are you sure you want to delete',
-		'MODAL_MESSAGE_TICKETS': 'tickets',
-		'MODAL_LABEL_NAME': 'Name',
-		'MODAL_LABEL_BOARDNAME': 'Board name',
-		'MODAL_LABEL_VISIBILITY': 'Visibility',
-		'MODAL_LABEL_SHARING': 'Sharing',
-		'MODAL_LABEL_COPY': 'Copy',
-		'MODAL_LABEL_CANCEL': 'Cancel',
-		'MODAL_LABEL_CREATE': 'Create',
-		'MODAL_LABEL_REMOVE': 'Remove',
-		'MODAL_LABEL_PEOPLEADD': 'Invite people',
-		'MODAL_LABEL_INVITE': 'Invite',
-		'MODAL_LABEL_GENERATE': 'Generate',
-		'MODAL_LABEL_CLEAR': 'Clear',
-		'MODAL_LABEL_SAVECHANGES': 'Save changes',
-		'MODAL_LABEL_DELETE': 'Delete',
-		'MODAL_LABEL_HEADINGADD': 'Add a heading...',
-		'MODAL_LABEL_DESCRIPTIONADD': 'Add a description...',
-		'MODAL_LABEL_APPLY': 'Apply',
-		'MODAL_LABEL_ADD': 'Add'
+		PROFILE_SETTINGS: 'Profile settings',
+		PROFILE_INFO:'Profile information',
+		PROFILE_ENTERUSER:'Enter a username',
+		PROFILE_YOURNAME:'Your username:',
+		//Submit button text = DONEBUTTON
+
+		PROFILE_CHANGEPW:'Change password',
+		PROFILE_CURRENTPW:'Enter your current password',
+		PROFILE_NEWPW:'Enter a new password',
+		PROFILE_CONFPW:'Confirm your new password',
+		//Submit button text = DONEBUTTON
+
+		//EDITBOARD
+		EDITBOARD_TITLE: 'Edit Board',
+		EDITBOARD_BOARDNAME: 'Board name',
+		EDITBOARD_BOARDBG: 'Board background',
+		EDITBOARD_BOARDSIZE: 'Board size (measured in tickets)',
+		EDITBOARD_WIDTH: 'Width',
+		EDITBOARD_HEIGHT: 'Height',
+
+		//REMOVEBOARD
+		REMOVEBOARD_TITLE: 'Remove the board',
+		REMOVEBOARD_CONTENT: 'Are you sure you want to remove this board?',
+		REMOVEBOARD_REMOVE: 'Remove',
+
+		//BOARDMEMBERS
+		BOARDMEMBERS_TITLE: 'Board members',
+
+		//EDITTICKET
+		EDITTICKET_HEADING:'Ticket heading',
+		EDITTICKET_CONTENT:'Ticket content',
+		EDITTICKET_YOURCOMMENT: 'Your comment',
+		EDITTICKET_ADDCOMMENT: 'Add comment',
+		EDITTICKET_DELETE: 'Delete',
+		EDITTICKET_SAVE: 'Save',
+		//EXPORTBOARD
+		EXPORTBOARD_TITLE: 'Export Board',
+		EXPORTBOARD_FORMAT: 'Export format',
+		EXPORTBOARD_EXPBUTTON: 'Export',
+
+		//INFOVIEW
+		//SLIDE1
+		INFO_TOWS: 'Return to workspace',
+		INFO_EDITBOARD: 'Edit board',
+		INFO_SHAREBOARD: 'Share board',
+		INFO_EXPORTBOARD: 'Export board',
+		INFO_SNAP: 'Make tickets snap to grid',
+		INFO_MINIMAP: 'Toggle the board minimap and navigate',
+		INFO_PROFILE: 'Edit your profile',
+		INFO_LOCALE: 'Choose a preferred language',
+		INFO_FEEDBACK: 'Send feedback to the developers',
+		INFO_LOGOUT: 'Logout',
+		//SLIDE2
+		INFO_TAPBOARD: 'Double tap the board to create a ticket.',
+		INFO_TAPTICKET: 'Double tap a ticket to edit it.',
+		INFO_TICKETCOLOR: 'Select a color for the ticket.',
+		INFO_EDITTICKET: 'Edit the contents of a ticket.',
+		//SLIDE3
+		INFO_EDITNAME: 'Edit the name of the board.',
+		INFO_PREVIEWBOARD: 'Board preview.',
+		INFO_EDITBG: 'Edit the board background.',
+		INFO_CHANGESIZE: 'Change the size of the board.',
+		//SLIDE4
+		INFO_SHAREURL: 'Tap Share to get the URL for sharing the board.',
+		//SLIDE5
+		INFO_GETEXPORT: 'Select an export format and tap Export to download the file.',
+
+		//ABOUT
+		ABOUT_TITLE: 'About Contriboard',
+		ABOUT_ABOUT: 'A fast open-source brainstorming tool for everyone.',
+		ABOUT_DEVS: 'Developers:',
+		ABOUT_HOMEPAGE: 'Contriboard homepage:',
+		ABOUT_CLIENT: 'Client version:',
+		ABOUT_API: 'API version:',
+		ABOUT_IMG: 'IMG version',
+
+		//SHARE BOARD
+		SHARE_TITLE: 'Share board',
+		SHARE_LINK: 'Sharing link',
+		SHARE_SHOW: 'Share',
+		SHARE_HIDE: 'Hide'
+
 	},
 	fi: {
-		'AUTH_HEADER_REGISTER': 'Rekisteröidy',
-		'AUTH_HEADER_LOGIN': 'Kirjaudu sisään',
-		'AUTH_MESSAGE_EMPTYFIELDS': 'Anna sähköpostiosoite ja salasana.',
-		'AUTH_MESSAGE_EMPTYUSERNAME': 'Anna käyttäjätunnus.',
-		'AUTH_MESSAGE_PWCONFIRMERROR': 'Salasanat eivät kohtaa',
-		'AUTH_MESSAGE_EMAILERROR': 'Sähköpostiosoite ei kelpaa',
-		'AUTH_MESSAGE_NOTREGISTERED': 'Etkö ole rekisteröitynyt?',
-		'AUTH_MESSAGE_ALREADYREGISTERED': 'Olet jo rekisteröitynyt?',
-		'AUTH_LABEL_EMAIL': 'Sähköposti',
-		'AUTH_LABEL_PASSWORD': 'Salasana',
-		'AUTH_LABEL_USERNAME': 'Käyttäjätunnus',
-		'AUTH_LABEL_PWCONFIRM': 'Salasana uudelleen',
-		'AUTH_LABEL_REGISTER': 'Rekisteröidy',
-		'AUTH_LABEL_SIGNIN': 'Kirjaudu sisään',
+		//DROPDOWN
+		DROPDOWN_PROFILE:'Profiili',
+		DROPDOWN_LOCALE:'Kieli',
+		DROPDOWN_FEEDBACK: 'Palaute',
+		DROPDOWN_ABOUT: 'Contriboardista',
+		DROPDOWN_LOGOUT: 'Kirjaudu ulos',
 
-		'LABEL_PRIVATE': 'Yksityinen',
-		'LABEL_PUBLIC': 'Avoin',
+		//UNIVERSAL
+		NOTFOUND: 'Ei löytynyt',
+		FORBIDDEN: 'Kielletty',
+		PASSWORD: 'Salasana',
+		EMAIL: 'E-mail',
+		PASSWORDMATCH: 'Salasanat täsmäävät!',
+		PASSWORDMISMATCH: 'Salasanat eivät täsmää!',
+		CANCELBUTTON: 'Peruuta',
+		DONEBUTTON: 'Valmis',
+		CLOSEBUTTON: 'Sulje',
 
-		'TOPBAR_LABEL_BOARDS': 'Lankut',
-		'TOPBAR_LABEL_CREATEBOARD': 'Luo lankku',
-		'TOPBAR_LABEL_CREATETICKET': 'Luo lappu',
+		//LOGIN
+		LOGIN_LOGIN: 'Kirjaudu sisään',
+		LOGIN_REGISTER: 'Rekisteröidy',
+		LOGIN_PASSWORDLENGTH: 'Salasanan täytyy olla vähintään 8 merkkiä pitkä.',
+		LOGIN_REGISTERFAIL: 'Rekisteröinti epäonnistui!',
 
-		'SIDEBAR_LABEL_BOARDS': 'Lankut',
-		'SIDEBAR_LABEL_LOGOUT': 'Kirjaudu ulos',
+		//PROFILE
+		PROFILE_WORKSPACE: 'Työtila',
 
-		'MODAL_HEADER_NEWBOARD': 'Luo uusi lankku',
-		'MODAL_HEADER_PEOPLEVIEW': 'Jäsenet',
-		'MODAL_HEADER_BOARDEDIT': 'Muokkaa lankkua',
-		'MODAL_HEADER_PEOPLEADD': 'Kutsu jäseniä',
-		'MODAL_HEADER_REMOVEBOARD': 'Poista lankku',
-		'MODAL_HEADER_REMOVEBOARDS': 'Poista lankut',
-		'MODAL_HEADER_REMOVETICKET': 'Poista lappu',
-		'MODAL_HEADER_REMOVETICKETS': 'Poista laput',
-		'MODAL_HEADER_TEMPLATES': 'Työpohjat',
-		'MODAL_HEADER_TEMPLATESELECT': 'Valitse työpohja:',
-		'MODAL_MESSAGE_BOARDREMOVE': 'Oletko varma, että haluat poistaa lankun',
-		'MODAL_MESSAGE_BOARDSREMOVE': 'Oletko varma, että haluat poistaa',
-		'MODAL_MESSAGE_BOARDS': 'lankkua',
-		'MODAL_MESSAGE_TICKETREMOVE': 'Oletko varma, että haluat poistaa lapun',
-		'MODAL_MESSAGE_TICKETSREMOVE': 'Oletko varma, että haluat poistaa',
-		'MODAL_MESSAGE_TICKETS': 'lippua',
-		'MODAL_LABEL_NAME': 'Nimi',
-		'MODAL_LABEL_BOARDNAME': 'Lankun nimi',
-		'MODAL_LABEL_VISIBILITY': 'Näkyvyys',
-		'MODAL_LABEL_SHARING': 'Jako',
-		'MODAL_LABEL_COPY': 'Kopioi',
-		'MODAL_LABEL_CANCEL': 'Peruuta',
-		'MODAL_LABEL_CREATE': 'Luo',
-		'MODAL_LABEL_REMOVE': 'Poista',
-		'MODAL_LABEL_PEOPLEADD': 'Kutsu jäseniä',
-		'MODAL_LABEL_INVITE': 'Kutsu',
-		'MODAL_LABEL_GENERATE': 'Generoi',
-		'MODAL_LABEL_CLEAR': 'Poista',
-		'MODAL_LABEL_SAVECHANGES': 'Tallenna muutokset',
-		'MODAL_LABEL_DELETE': 'Poista',
-		'MODAL_LABEL_HEADINGADD': 'Lisää otsikko...',
-		'MODAL_LABEL_DESCRIPTIONADD': 'Lisää kuvaus...',
-		'MODAL_LABEL_APPLY': 'Hyväksy',
-		'MODAL_LABEL_ADD': 'Lisää'
+		PROFILE_SETTINGS: 'Profiilin asetukset',
+		PROFILE_INFO:'Profiilin tiedot',
+		PROFILE_ENTERUSER:'Anna käyttäjänimi',
+		PROFILE_YOURNAME:'Käyttäjänimesi:',
+
+		PROFILE_CHANGEPW:'Vaihda salasana',
+		PROFILE_CURRENTPW:'Anna nykyinen salasanasi',
+		PROFILE_NEWPW:'Anna uusi salasana',
+		PROFILE_CONFPW:'Kirjoita salasana uudelleen',
+
+		//EDITBOARD
+		EDITBOARD_TITLE: 'Muokkaa lautaa',
+		EDITBOARD_BOARDNAME: 'Laudan nimi',
+		EDITBOARD_BOARDBG: 'Laudan taustakuva',
+		EDITBOARD_BOARDSIZE: 'Laudan koko (lappuina)',
+		EDITBOARD_WIDTH: 'Leveys',
+		EDITBOARD_HEIGHT: 'Korkeus',
+
+		//REMOVEBOARD
+		REMOVEBOARD_TITLE: 'Poista lauta',
+		REMOVEBOARD_CONTENT: 'Haluatko varmasti poistaa tämän laudan?',
+		REMOVEBOARD_REMOVE: 'Poista',
+
+		//BOARDMEMBERS
+		BOARDMEMBERS_TITLE: 'Laudan jäsenet',
+
+		//EDITTICKET
+		EDITTICKET_HEADING:'Lapun otsikko',
+		EDITTICKET_CONTENT:'Lapun sisältö',
+		EDITTICKET_YOURCOMMENT: 'Kommenttisi',
+		EDITTICKET_ADDCOMMENT: 'Lisää kommentti',
+		EDITTICKET_DELETE: 'Poista',
+		EDITTICKET_SAVE: 'Tallenna',
+
+		//EXPORTBOARD
+		EXPORTBOARD_TITLE: 'Lataa lauta koneellesi',
+		EXPORTBOARD_FORMAT: 'Valitse tiedostomuoto',
+		EXPORTBOARD_EXPBUTTON: 'Lataa',
+
+		//SLIDE1
+		INFO_TOWS: 'Palaa työtilaan',
+		INFO_EDITBOARD: 'Muokkaa lautaa',
+		INFO_SHAREBOARD: 'Jaa lauta',
+		INFO_EXPORTBOARD: 'Lataa lauta koneellesi',
+		INFO_SNAP: 'Kiinnitä laput ruudukon mukaan',
+		INFO_MINIMAP: 'Näytä kartta ja navigoi',
+		INFO_PROFILE: 'Muokkaa profiilia',
+		INFO_LOCALE: 'Vaihda käyttökieli',
+		INFO_FEEDBACK: 'Lähetä palautetta kehittäjille',
+		INFO_LOGOUT: 'Kirjaudu ulos',
+		//SLIDE2
+		INFO_TAPBOARD: 'Kaksoisnapauta lautaa luodaksesi lapun.',
+		INFO_TAPTICKET: 'Muokkaa lappua kaksoisnapauttamalla sitä.',
+		INFO_TICKETCOLOR: 'Valitse lapun väri.',
+		INFO_EDITTICKET: 'Muokkaa lapun sisältöä.',
+		//SLIDE3
+		INFO_EDITNAME: 'Muokkaa laudan nimeä.',
+		INFO_PREVIEWBOARD: 'Laudan esikatselu.',
+		INFO_EDITBG: 'Muokkaa laudan taustakuvaa.',
+		INFO_CHANGESIZE: 'Muuta laudan kokoa.',
+		//SLIDE4
+		INFO_SHAREURL: 'Paina Jaa-nappia luodaksesi linkki laudalle.',
+		//SLIDE5
+		INFO_GETEXPORT: 'Valitse tiedostomuoto ja lataa lauta painamalla Export-nappia.',
+
+		//ABOUT
+		ABOUT_TITLE: 'Tietoa Contriboardista',
+		ABOUT_ABOUT: 'Nopea avoimen lähdekoodin aivoriihityökalu kaikille.',
+		ABOUT_DEVS: 'Kehittäjät:',
+		ABOUT_HOMEPAGE: 'Contriboardin kotisivu:',
+		ABOUT_CLIENT: 'Client versio:',
+		ABOUT_API: 'API versio',
+		ABOUT_IMG: 'IMG versio',
+
+		//SHARE BOARD
+		SHARE_TITLE: 'Jaa lauta',
+		SHARE_LINK: 'Jakolinkki',
+		SHARE_SHOW: 'Jaa',
+		SHARE_HIDE: 'Piilota'
+
 	},
 	se: {
-		'AUTH_HEADER_REGISTER': 'Registrera',
-		'AUTH_HEADER_LOGIN': 'Logga in',
-		'AUTH_MESSAGE_EMPTYFIELDS': 'Ange din e-postadress och lösenord.',
-		'AUTH_MESSAGE_EMPTYUSERNAME': 'Skriv in ditt användarnamn.',
-		'AUTH_MESSAGE_PWCONFIRMERROR': 'Lösenord mismatch',
-		'AUTH_MESSAGE_EMAILERROR': 'Ogiltig e-post',
-		'AUTH_MESSAGE_NOTREGISTERED': 'Inte registrerad?',
-		'AUTH_MESSAGE_ALREADYREGISTERED': 'Redan registrerad?',
-		'AUTH_LABEL_EMAIL': 'E-post',
-		'AUTH_LABEL_PASSWORD': 'Lösenord',
-		'AUTH_LABEL_USERNAME': 'Användarnamn',
-		'AUTH_LABEL_PWCONFIRM': 'bekräfta lösenord',
-		'AUTH_LABEL_REGISTER': 'Registrera',
-		'AUTH_LABEL_SIGNIN': 'Logga in',
+		//DROPDOWN
+		DROPDOWN_PROFILE:'Profil',
+		DROPDOWN_LOCALE:'Språk',
+		DROPDOWN_FEEDBACK: 'Feedback',
+		DROPDOWN_ABOUT: 'Om Contriboard',
+		DROPDOWN_LOGOUT: 'Logga ut',
 
-		'LABEL_PRIVATE': 'Privat',
-		'LABEL_PUBLIC': 'Offentlig',
+		//UNIVERSAL
+		NOTFOUND: 'Finns inte',
+		FORBIDDEN: 'Förbjudet',
+		PASSWORD: 'Lösenord',
+		EMAIL: 'E-post',
+		PASSWORDMATCH: 'Lösernord matchar!',
+		PASSWORDMISMATCH: 'Lösernorden matchar inte!',
+		CANCELBUTTON: 'Avbryt',
+		DONEBUTTON: 'Färdig',
+		CLOSEBUTTON: 'Stänga',
 
-		'TOPBAR_LABEL_BOARDS': 'Brädor',
-		'TOPBAR_LABEL_CREATEBOARD': 'Skapa bräda',
-		'TOPBAR_LABEL_CREATETICKET': 'Skapa biljett',
+		//LOGIN
+		LOGIN_LOGIN: 'Logga in',
+		LOGIN_REGISTER: 'Skapa konto',
+		LOGIN_PASSWORDLENGTH:'Lösenordet måste ha åtminstone 8 tecken.',
+		LOGIN_REGISTERFAIL:'Registrering misslyckades!',
 
-		'SIDEBAR_LABEL_BOARDS': 'Brädor',
-		'SIDEBAR_LABEL_LOGOUT': 'Logga ut',
+		//PROFILE
+		PROFILE_WORKSPACE: 'Arbetsyta',
 
-		'MODAL_HEADER_NEWBOARD': 'Skapa en ny bräda',
-		'MODAL_HEADER_PEOPLEVIEW': 'Personer i denna bräda',
-		'MODAL_HEADER_BOARDEDIT': 'Redigera bräda',
-		'MODAL_HEADER_PEOPLEADD': 'Bjud in personer',
-		'MODAL_HEADER_REMOVEBOARD': 'Radera bräda',
-		'MODAL_HEADER_REMOVEBOARDS': 'Radera brädor',
-		'MODAL_HEADER_REMOVETICKET': 'Radera biljett',
-		'MODAL_HEADER_REMOVETICKETS': 'Radera biljetter',
-		'MODAL_HEADER_TEMPLATES': 'Arbetsflöde mallar',
-		'MODAL_HEADER_TEMPLATESELECT': 'Välj arbetsflöde mall:',
-		'MODAL_MESSAGE_BOARDREMOVE': 'Är du säker på att du vill ta bort brädan',
-		'MODAL_MESSAGE_BOARDSREMOVE': 'Är du säker på att du vill ta bort',
-		'MODAL_MESSAGE_BOARDS': 'Brädor',
-		'MODAL_MESSAGE_TICKETREMOVE': 'Är du säker på att du vill ta bort biljett',
-		'MODAL_MESSAGE_TICKETSREMOVE': 'Är du säker på att du vill ta bort',
-		'MODAL_MESSAGE_TICKETS': 'biljetter',
-		'MODAL_LABEL_NAME': 'Namn',
-		'MODAL_LABEL_BOARDNAME': 'Bräda namn',
-		'MODAL_LABEL_VISIBILITY': 'Sikt',
-		'MODAL_LABEL_SHARING': 'Delning',
-		'MODAL_LABEL_COPY': 'Kopiera',
-		'MODAL_LABEL_CANCEL': 'Avbryt',
-		'MODAL_LABEL_CREATE': 'Skapa',
-		'MODAL_LABEL_REMOVE': 'Ta bort',
-		'MODAL_LABEL_PEOPLEADD': 'Bjud in personer',
-		'MODAL_LABEL_INVITE': 'Bjuda',
-		'MODAL_LABEL_GENERATE': 'Generera',
-		'MODAL_LABEL_CLEAR': 'Klar',
-		'MODAL_LABEL_SAVECHANGES': 'Spara ändringar',
-		'MODAL_LABEL_DELETE': 'Radera',
-		'MODAL_LABEL_HEADINGADD': 'Lägg till en rubrik...',
-		'MODAL_LABEL_DESCRIPTIONADD': 'Lägg till en beskrivning...',
-		'MODAL_LABEL_APPLY': 'Tillämpa',
-		'MODAL_LABEL_ADD': 'Addera'
+		PROFILE_SETTINGS: 'Profilinställningar',
+		PROFILE_INFO:'Profil information',
+		PROFILE_ENTERUSER:'Välj ett användarnamn',
+		PROFILE_YOURNAME:'Ditt användarnamn:',
+
+		PROFILE_CHANGEPW:'Ändra lösenord',
+		PROFILE_CURRENTPW:'Ge ditt nuvarande lösenord',
+		PROFILE_NEWPW:'Ge ett nytt lösenord',
+		PROFILE_CONFPW:'Bekräfta lösenordet',
+
+		//EDITBOARD
+		EDITBOARD_TITLE: 'Redigera Bordet',
+		EDITBOARD_BOARDNAME: 'Bordets namn',
+		EDITBOARD_BOARDBG: 'Bord bakgrund',
+		EDITBOARD_BOARDSIZE: 'Bordets storlek (som lappar)',
+		EDITBOARD_WIDTH: 'Bredd',
+		EDITBOARD_HEIGHT: 'Höjd',
+
+
+		//REMOVEBOARD
+		REMOVEBOARD_TITLE: 'Radera bordet',
+		REMOVEBOARD_CONTENT: 'Är du säker på att du vill radera bordet?',
+		REMOVEBOARD_REMOVE: 'Radera',
+
+		//BOARDMEMBERS
+		BOARDMEMBERS_TITLE: 'Bräd medlemmar',
+
+		//EDITTICKET
+		EDITTICKET_HEADING:'Lappens rubriken',
+		EDITTICKET_CONTENT:'Lappeninnehåll',
+		EDITTICKET_YOURCOMMENT: 'Din kommentar',
+		EDITTICKET_ADDCOMMENT: 'Lägg till kommentar',
+		EDITTICKET_DELETE: 'Radera',
+		EDITTICKET_SAVE: 'Spara',
+		//EXPORTBOARD
+		EXPORTBOARD_TITLE: 'Exportera bordet',
+		EXPORTBOARD_FORMAT: 'Exportera format',
+		EXPORTBOARD_EXPBUTTON: 'Export',
+
+		//INFOVIEW
+		//SLIDE1
+		INFO_TOWS: 'Gå tillbaka till arbetsytan',
+		INFO_EDITBOARD: 'Redigera bordet',
+		INFO_SHAREBOARD: 'Del bordet',
+		INFO_EXPORTBOARD: 'Exportera bordet',
+		INFO_SNAP: 'Fäst mot stödraster',
+		INFO_MINIMAP: 'Visa miniatyröversikt och navigera',
+		INFO_PROFILE: 'Redigera din profil',
+		INFO_LOCALE: 'Ändra språk',
+		INFO_FEEDBACK: 'Skicka feedback till utvecklarna',
+		INFO_LOGOUT: 'Logga ut',
+		//SLIDE2
+		INFO_TAPBOARD: 'Dubbelklicka bordet för att skapa en lapp.',
+		INFO_TAPTICKET: 'Dubbelklicka lappan för att redigera det.',
+		INFO_TICKETCOLOR: 'Välj en färg för lappan.',
+		INFO_EDITTICKET: 'Redigera innehållet i en lapp.',
+		//SLIDE3
+		INFO_EDITNAME: 'Redigera bordets namn.',
+		INFO_PREVIEWBOARD: 'Bordets förhandsgranskning.',
+		INFO_EDITBG: 'Redigera bordets bakgrundsbild.',
+		INFO_CHANGESIZE: 'Ändra bordets storlek.',
+		//SLIDE4
+		INFO_SHAREURL: 'Tryck på Dela för att få en URL till bordet.',
+		//SLIDE5
+		INFO_GETEXPORT: 'Välj ett exportformat och tryck på Exportera för att ladda filen.',
+
+		//ABOUT
+		ABOUT_TITLE: 'Om Contriboard',
+		ABOUT_ABOUT: 'En snabb öppen källkod brainstorming verktyg för alla.',
+		ABOUT_DEVS: 'Utvecklare:',
+		ABOUT_HOMEPAGE: 'Contriboard hemsida:',
+		ABOUT_CLIENT: 'Client version:',
+		ABOUT_API: 'API version',
+		ABOUT_IMG: 'IMG version',
+
+		//SHARE BOARD
+		SHARE_TITLE: 'Dela bord',
+		SHARE_LINK: 'Dela länk',
+		SHARE_SHOW: 'Del',
+		SHARE_HIDE: 'Göm'
+
 	},
 	ru: {
-		'AUTH_HEADER_REGISTER': 'Зарегистрироваться',
-		'AUTH_HEADER_LOGIN': 'Войти',
-		'AUTH_MESSAGE_EMPTYFIELDS': 'Пожалуйста, введите свой ​​логин и пароль.',
-		'AUTH_MESSAGE_EMPTYUSERNAME': 'Пожалуйста, введите свое имя пользователя.',
-		'AUTH_MESSAGE_PWCONFIRMERROR': 'Пароль несоответствие',
-		'AUTH_MESSAGE_EMAILERROR': 'Неверное имя пользователя',
-		'AUTH_MESSAGE_NOTREGISTERED': 'Вы не зарегистрированы?',
-		'AUTH_MESSAGE_ALREADYREGISTERED': 'Уже зарегистрированы?',
-		'AUTH_LABEL_EMAIL': 'E-mail',
-		'AUTH_LABEL_PASSWORD': 'Пароль',
-		'AUTH_LABEL_USERNAME': 'Имя пользователя',
-		'AUTH_LABEL_PWCONFIRM': 'Подтвердите пароль',
-		'AUTH_LABEL_REGISTER': 'Зарегистрироваться',
-		'AUTH_LABEL_SIGNIN': 'Войдите',
+		//DROPDOWN
+		DROPDOWN_PROFILE:'профиль',
+		DROPDOWN_LOCALE:'язык',
+		DROPDOWN_FEEDBACK: 'обратная связь',
+		DROPDOWN_ABOUT: 'около',
+		DROPDOWN_LOGOUT: 'выйти',
 
-		'LABEL_PRIVATE': 'Личный',
-		'LABEL_PUBLIC': 'Общественный',
+		//UNIVERSAL
+		NOTFOUND: 'не найдено',
+		FORBIDDEN: 'запрещено',
+		PASSWORD: 'пароль',
+		EMAIL: 'E-mail',
+		PASSWORDMATCH: 'пароли совпадают',
+		PASSWORDMISMATCH: 'пароли несоответствие',
+		CANCELBUTTON: 'отменить',
+		DONEBUTTON: 'готовы',
+		CLOSEBUTTON: 'Закрыть',
 
-		'TOPBAR_LABEL_BOARDS': 'Доски',
-		'TOPBAR_LABEL_CREATEBOARD': 'Создание сообщения',
-		'TOPBAR_LABEL_CREATETICKET': 'Создать билетов',
+		//LOGIN
+		LOGIN_LOGIN:'Войти',
+		LOGIN_REGISTER:'Зарегистрироваться',
+		LOGIN_PASSWORDLENGTH:'Пароль должен быть длиной не менее 8 символов.',
+		LOGIN_REGISTERFAIL:'Регистрация не удалось!',
 
-		'SIDEBAR_LABEL_BOARDS': 'Доски',
-		'SIDEBAR_LABEL_LOGOUT': 'Выйти',
+		//PROFILE
+		PROFILE_WORKSPACE: 'рабочее пространство',
 
-		'MODAL_HEADER_NEWBOARD': 'Создать новый совет',
-		'MODAL_HEADER_PEOPLEVIEW': 'Люди на этой плате',
-		'MODAL_HEADER_BOARDEDIT': 'Ред актировать доска',
-		'MODAL_HEADER_PEOPLEADD': 'Пригласить людей',
-		'MODAL_HEADER_REMOVEBOARD': 'Удалить доска',
-		'MODAL_HEADER_REMOVEBOARDS': 'Удалить доски',
-		'MODAL_HEADER_REMOVETICKET': 'Удалить билет',
-		'MODAL_HEADER_REMOVETICKETS': 'Удалить билеты',
-		'MODAL_HEADER_TEMPLATES': 'Шаблоны рабочих процессов',
-		'MODAL_HEADER_TEMPLATESELECT': 'Выберите шаблон рабочего процесса:',
-		'MODAL_MESSAGE_BOARDREMOVE': 'Вы уверены, что хотите удалить доска',
-		'MODAL_MESSAGE_BOARDSREMOVE': 'Вы уверены, что хотите удалить',
-		'MODAL_MESSAGE_BOARDS': 'доски',
-		'MODAL_MESSAGE_TICKETREMOVE': 'Вы уверены, что хотите удалить билет',
-		'MODAL_MESSAGE_TICKETSREMOVE': 'Вы уверены, что хотите удалить',
-		'MODAL_MESSAGE_TICKETS': 'билеты',
-		'MODAL_LABEL_NAME': 'Имя',
-		'MODAL_LABEL_BOARDNAME': 'Имя доска',
-		'MODAL_LABEL_VISIBILITY': 'Видимость',
-		'MODAL_LABEL_SHARING': 'Обмен',
-		'MODAL_LABEL_COPY': 'Копировать',
-		'MODAL_LABEL_CANCEL': 'Отменить',
-		'MODAL_LABEL_CREATE': 'Создать',
-		'MODAL_LABEL_REMOVE': 'Удалять',
-		'MODAL_LABEL_PEOPLEADD': 'Пригласить людей',
-		'MODAL_LABEL_INVITE': 'Приглашать',
-		'MODAL_LABEL_GENERATE': 'Генерация',
-		'MODAL_LABEL_CLEAR': 'Ясно',
-		'MODAL_LABEL_SAVECHANGES': 'Сохранить изменения',
-		'MODAL_LABEL_DELETE': 'Удалить',
-		'MODAL_LABEL_HEADINGADD': 'Добавить заголовок ...',
-		'MODAL_LABEL_DESCRIPTIONADD': 'Добавление описания ...',
-		'MODAL_LABEL_APPLY': 'Применить',
-		'MODAL_LABEL_ADD': 'Добавить'
+		PROFILE_SETTINGS: 'настройки профиля',
+		PROFILE_INFO:'информация профиля',
+		PROFILE_ENTERUSER:'введите имя пользователя',
+		PROFILE_YOURNAME:'ваше имя пользователя:',
+
+		PROFILE_CHANGEPW:'изменить пароль',
+		PROFILE_CURRENTPW:'Введите текущий пароль',
+		PROFILE_NEWPW:'Введите новый пароль',
+		PROFILE_CONFPW:'Подтвердите новый пароль',
+
+		//EDITBOARD
+		EDITBOARD_TITLE: 'Ред актировать доска',
+		EDITBOARD_BOARDNAME: '',
+		EDITBOARD_BOARDBG: 'Совет фона',
+		EDITBOARD_BOARDSIZE: 'Размер платы (измеряется в билеты)',
+		EDITBOARD_WIDTH: 'ширина',
+		EDITBOARD_HEIGHT: 'высота',
+
+		//REMOVEBOARD
+		REMOVEBOARD_TITLE: 'удалить доска',
+		REMOVEBOARD_CONTENT: 'Вы уверены, что хотите удалить этот раздел?',
+		REMOVEBOARD_REMOVE: 'удалить',
+
+		//BOARDMEMBERS
+		BOARDMEMBERS_TITLE: 'совет директоров',
+
+		//EDITTICKET
+		EDITTICKET_HEADING:'заголовок билетов',
+		EDITTICKET_CONTENT:'содержание билетов',
+		EDITTICKET_YOURCOMMENT: 'Ваш комментарий',
+		EDITTICKET_ADDCOMMENT: 'добавить комментарий',
+		EDITTICKET_DELETE: 'удалить',
+		EDITTICKET_SAVE: 'сохранить',
+		//EXPORTBOARD
+		EXPORTBOARD_TITLE: 'Экспорт доска',
+		EXPORTBOARD_FORMAT: 'формат экспорта',
+		EXPORTBOARD_EXPBUTTON: 'Экспорт',
+
+		//INFOVIEW
+		//SLIDE1
+		INFO_TOWS: 'Вернуться к рабочей',
+		INFO_EDITBOARD: 'Ред актировать доска',
+		INFO_SHAREBOARD: 'Доля платы',
+		INFO_EXPORTBOARD: 'Экспорт доска',
+		INFO_SNAP: 'Сделать билеты привязки к сетке',
+		INFO_MINIMAP: 'Переключение обзор платы и навигации',
+		INFO_PROFILE: 'Редактировать профиль',
+		INFO_LOCALE: 'Изменить язык операционной',
+		INFO_FEEDBACK: 'Отправить отзыв разработчикам',
+		INFO_LOGOUT: 'выйти',
+		//SLIDE2
+		INFO_TAPBOARD: 'Дважды нажмите, чтобы создать совет билет.',
+		INFO_TAPTICKET: 'Дважды нажмите билет, чтобы изменить его.',
+		INFO_TICKETCOLOR: 'Выберите цвет для вашего билета.',
+		INFO_EDITTICKET: 'Редактировать содержимое билета.',
+		//SLIDE3
+		INFO_EDITNAME: 'Измените имя этого совета.',
+		INFO_PREVIEWBOARD: 'Совет просмотра.',
+		INFO_EDITBG: 'Редактировать доска фоновое изображение.',
+		INFO_CHANGESIZE: 'Изменить размер этой платы.',
+		//SLIDE4
+		INFO_SHAREURL: 'Нажмите Отправить, чтобы получить адрес этой платы для совместного использования.',
+		//SLIDE5
+		INFO_GETEXPORT: 'Выберите формат экспорта и нажмите Экспорт, чтобы загрузить файл.',
+
+		//ABOUT
+		ABOUT_TITLE: 'Обо Contriboard',
+		ABOUT_ABOUT: 'Быстрый открытым исходным кодом мозговой штурм инструмент для всех.',
+		ABOUT_DEVS: 'разработчиков:',
+		ABOUT_HOMEPAGE: 'Contriboard домашнюю:',
+		ABOUT_CLIENT: 'Client версия:',
+		ABOUT_API: 'API версия:',
+		ABOUT_IMG: 'IMG версия',
+
+		//SHARE BOARD
+		SHARE_TITLE: 'Поделиться Совет',
+		SHARE_LINK: 'Общий ссылку',
+		SHARE_SHOW: 'поделиться',
+		SHARE_HIDE: 'скрывать'
+
 	}
 }

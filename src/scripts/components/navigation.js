@@ -166,22 +166,22 @@ export default React.createClass({
 		let locales = [
 			{flag: 'fi', content: 'Suomi', onClick: () => {
 					SettingsAction.setSetting('locale', 'fi');
-					window.location.reload();
+					this.toggleDropdown();
 				}
 			},
 			{flag: 'se', content: 'Svenska', onClick: () => {
 					SettingsAction.setSetting('locale', 'se');
-					window.location.reload();
+					this.toggleDropdown();
 				}
 			},
 			{flag: 'ru', content: 'русский', onClick: () => {
 					SettingsAction.setSetting('locale', 'ru');
-					window.location.reload();
+					this.toggleDropdown();
 				}
 			},
 			{flag: 'gb', content: 'English', onClick: () => {
 					SettingsAction.setSetting('locale', 'en');
-					window.location.reload();
+					this.toggleDropdown();
 				}
 			}
 		]

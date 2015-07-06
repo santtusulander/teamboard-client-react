@@ -1,6 +1,7 @@
 import React   from 'react/addons';
 import Board   from '../models/board';
 import Minimap from './minimap';
+import SettingsStore from '../stores/settings';
 
 /**
  *
@@ -42,8 +43,8 @@ export default React.createClass({
 
 		return (
 			<div className="background-select">
-				<label>Board Background</label>
-				<div className="select">
+				<label>{SettingsStore.getSetting('locale').EDITBOARD_BOARDBG}</label>
+				<div className="select" id={"background-select"}>
 					<select onChange={this.onChange}
 							defaultValue={this.props.background.value}>
 						{this.renderOptions()}
@@ -58,7 +59,7 @@ export default React.createClass({
 	renderOptions: function() {
 		return Object.keys(Board.Background).map(function(key) {
 			return (
-				<option key={key} value={key}>
+				<option key={key} value={key} id={"background-select-" + key}>
 					{Board.Background[key].description}
 				</option>
 			);
