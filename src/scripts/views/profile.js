@@ -42,7 +42,7 @@ export default React.createClass({
 			case 'password':
 			case 'file': return (
 				<section>
-					<label htmlFor={field.name}>{field.label}</label>
+					<label htmlFor={field.name}>{this.state.locale[field.label]}</label>
 					<input autoFocus={index === 0} name={field.name}
 					type={field.type} {...controlattrs}
 					valueLink={this.linkState(field.name)} />
@@ -50,20 +50,20 @@ export default React.createClass({
 				);
 			case 'myEmail': return (
 				<section>
-					<h4>{field.title}</h4>
+					<h4>{this.state.locale[field.title]}</h4>
 					<p>{userNameContent}</p>
 				</section>
 			);
 			case 'avatar': return (
 				<section>
-					<h4>{field.title}</h4>
+					<h4>{this.state.locale[field.title]}</h4>
 					<div className="avatar-wrapper">
 						<Avatar size={64} name={userNameContent}
 								imageurl={this.state.avatar}
 								isOnline={true}>
 						</Avatar>
 					</div>
-					<label htmlFor={field.label}>{field.label}</label>
+					<label htmlFor={field.label}>{this.state.locale[field.label]}</label>
 					<input autoFocus={index === 0} type={field.type}
 						{...controlattrs} valueLink={this.linkState(field.name)} />
 				</section>
@@ -91,7 +91,7 @@ export default React.createClass({
 				pattern:   field.pattern,
 				required:  field.required,
 				className: field.className,
-				value:     field.text,
+				value:     this.state.locale[field.text],
 				onChange:  field.onChange
 			}
 			return (
@@ -115,7 +115,7 @@ export default React.createClass({
 		else return (event) => {
 			BroadcastAction.add({
 				type:    'Error',
-				content: 'Password mismatch!'
+				content: this.state.locale.PASSWORDMISMATCH
 			});
 			return event.preventDefault();
 		}
@@ -132,7 +132,7 @@ export default React.createClass({
 				<li className={className}>
 					<p  onClick={field.onClick}>
 					<span className={`fa fa-${field.icon}`}></span>
-					{field.name}
+					{this.state.locale[field.name]}
 					</p>
 				</li>
 			);
@@ -156,9 +156,9 @@ export default React.createClass({
 					<div className="form-container">
 						<form className="login-info"
 							onSubmit={this.submitPrimary(formType)}>
-							<h3>{formType.title}</h3>
+							<h3>{this.state.locale[formType.title]}</h3>
 							{this.renderFields(formType.fields)}
-							<article className="help">{formType.help}</article>
+							<article className="help"></article>
 							<section className="secondary-content">
 								{this.checkPasswords()}
 							</section>
