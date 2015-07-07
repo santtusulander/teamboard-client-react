@@ -3,33 +3,40 @@ import UserStore  from '../stores/user';
 import Avatar       from '../components/avatar';
 import Navigation   from '../components/navigation';
 import Broadcaster  from '../components/broadcaster';
-import ProfileForms from '../views/form/profile-forms';
+import ProfileForms from './form/profile-forms';
 import BroadcastAction from '../actions/broadcast';
-
+import SettingsStore from '../stores/settings';
+import listener      from '../mixins/listener';
 /**
  *
  */
 
 export default React.createClass({
-	mixins: [ React.addons.LinkedStateMixin ],
+	mixins: [ React.addons.LinkedStateMixin, listener(SettingsStore)],
 	propTypes: {
 		formProfile: React.PropTypes.string.isRequired
 	},
 	getInitialState() {
-		return 	ProfileForms.fieldNames.reduce((state, field) => {
-				state[field] = field !== 'avatar' ?
-					'' : UserStore.getUser().avatar;
+		return 	ProfileForms.stateVariables.reduce((state, variable) => {
+			if(variable === 'avatar') state[variable] = UserStore.getUser().avatar;
+			else if(variable === 'locale') state[variable] = SettingsStore.getSetting('locale');
+			else state[variable] = '';
 					return state;
 				}, {});
 	},
 
+	onChange() {
+		this.setState({locale: SettingsStore.getSetting('locale')})
+		console.log(this.state.locale)
+	},
+
 	getFieldType(field, index, controlattrs) {
 		let userNameContent = this.state.name === '' || !this.state.name ?
-		UserStore.getUser().username :
-		this.state.name;
+			UserStore.getUser().username :
+			this.state.name;
 		switch(field.type){
 			case 'submit': return (
-					<input name={field.name} type={"submit"} {...controlattrs} />
+					<input name={field.name} type={field.type} {...controlattrs} />
 				);
 			case 'text':
 			case 'password':
@@ -41,10 +48,10 @@ export default React.createClass({
 					valueLink={this.linkState(field.name)} />
 				</section>
 				);
-			case 'email': return (
+			case 'myEmail': return (
 				<section>
-				<h4>{field.title}</h4>
-				<p>{userNameContent}</p>
+					<h4>{field.title}</h4>
+					<p>{userNameContent}</p>
 				</section>
 			);
 			case 'avatar': return (
@@ -68,8 +75,12 @@ export default React.createClass({
 		if(this.props.formProfile === 'loginSettings' &&
 			this.state.newPasswordAgain.length > 7) {
 			return this.state.newPasswordAgain !== this.state.newPassword ?
-				<span className="fa fa-times mismatch">Password mismatch!</span>
-				: <span className="fa fa-check match">Passwords match!</span>;
+				<span className="fa fa-times mismatch">
+					{this.state.locale.PASSWORDMISMATCH}
+				</span> :
+				<span className="fa fa-check match">
+					{this.state.locale.PASSWORDMATCH}
+				</span>;
 		}
 	},
 
@@ -80,7 +91,7 @@ export default React.createClass({
 				pattern:   field.pattern,
 				required:  field.required,
 				className: field.className,
-				value:     field.action,
+				value:     field.text,
 				onChange:  field.onChange
 			}
 			return (

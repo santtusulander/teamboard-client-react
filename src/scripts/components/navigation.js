@@ -6,6 +6,8 @@ import UserAction      from '../actions/user';
 import SettingsAction from '../actions/settings';
 import BroadcastAction from '../actions/broadcast';
 
+import SettingsStore from '../stores/settings';
+
 import Dropdown     from '../components/dropdown';
 import MemberDialog from '../components/dialog/board-members';
 
@@ -129,12 +131,12 @@ export default React.createClass({
 			);
 
 		let items = [
-			{ icon: 'user', content: 'Profile',
+			{ icon: 'user', content: SettingsStore.getSetting('locale').DROPDOWN_PROFILE,
 			onClick: () => {
 				return page.show('/profile')
 			}
 			},
-			{ icon: 'language', content: 'Localization',
+			{ icon: 'language', content: SettingsStore.getSetting('locale').DROPDOWN_LOCALE,
 				onClick: () => {
 					this.setState({ localesDropdown: !this.state.localesDropdown });
 				}
@@ -143,7 +145,7 @@ export default React.createClass({
 				content: (
 					<UserVoice>
 						<span className="fa fa-fw fa-bullhorn" />
-						Feedback
+						{SettingsStore.getSetting('locale').DROPDOWN_FEEDBACK}
 					</UserVoice>
 				)
 			},
@@ -151,7 +153,7 @@ export default React.createClass({
 				onClick: () => {
 					this.toggleAboutView();
 				},
-				icon: 'question-circle', content: 'About'
+				icon: 'question-circle', content: SettingsStore.getSetting('locale').DROPDOWN_ABOUT
 			},
 			{
 				onClick: () => {
@@ -160,7 +162,7 @@ export default React.createClass({
 							BroadcastAction.add(err, Action.User.Logout);
 						});
 				},
-				icon: 'sign-out', content: 'Logout'
+				icon: 'sign-out', content: SettingsStore.getSetting('locale').DROPDOWN_LOGOUT
 			}
 		];
 		let locales = [

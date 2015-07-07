@@ -8,6 +8,7 @@ export default {
 		DROPDOWN_LOGOUT: 'Logout',
 
 		//UNIVERSAL
+		SUCCESS: '',
 		NOTFOUND: 'Not found',
 		FORBIDDEN: 'Forbidden',
 		PASSWORD: 'Password',
@@ -26,7 +27,8 @@ export default {
 
 		//PROFILE
 		PROFILE_WORKSPACE: 'Workspace',
-
+		PROFILE_ENTERURL:'Enter a URL to an image',
+		PROFILE_ENTERNAME:'Enter a username',
 		PROFILE_SETTINGS: 'Profile settings',
 		PROFILE_INFO:'Profile information',
 		PROFILE_ENTERUSER:'Enter a username',
@@ -120,6 +122,7 @@ export default {
 		DROPDOWN_LOGOUT: 'Kirjaudu ulos',
 
 		//UNIVERSAL
+		SUCCESS: 'Onnistui!',
 		NOTFOUND: 'Ei löytynyt',
 		FORBIDDEN: 'Kielletty',
 		PASSWORD: 'Salasana',
@@ -138,7 +141,8 @@ export default {
 
 		//PROFILE
 		PROFILE_WORKSPACE: 'Työtila',
-
+		PROFILE_ENTERURL:'Syötä Avatarisi URL',
+		PROFILE_ENTERNAME:'Syötä käyttäjänimi',
 		PROFILE_SETTINGS: 'Profiilin asetukset',
 		PROFILE_INFO:'Profiilin tiedot',
 		PROFILE_ENTERUSER:'Anna käyttäjänimi',
@@ -229,6 +233,7 @@ export default {
 		DROPDOWN_LOGOUT: 'Logga ut',
 
 		//UNIVERSAL
+		SUCCESS: 'Framgång',
 		NOTFOUND: 'Finns inte',
 		FORBIDDEN: 'Förbjudet',
 		PASSWORD: 'Lösenord',
@@ -247,7 +252,8 @@ export default {
 
 		//PROFILE
 		PROFILE_WORKSPACE: 'Arbetsyta',
-
+		PROFILE_ENTERURL:'Ange din Avatars webbadressen',
+		PROFILE_ENTERNAME:'Ange ditt användarnamn',
 		PROFILE_SETTINGS: 'Profilinställningar',
 		PROFILE_INFO:'Profil information',
 		PROFILE_ENTERUSER:'Välj ett användarnamn',
@@ -339,6 +345,7 @@ export default {
 		DROPDOWN_LOGOUT: 'выйти',
 
 		//UNIVERSAL
+		SUCCESS: 'Управляемый',
 		NOTFOUND: 'не найдено',
 		FORBIDDEN: 'запрещено',
 		PASSWORD: 'пароль',
@@ -357,7 +364,8 @@ export default {
 
 		//PROFILE
 		PROFILE_WORKSPACE: 'рабочее пространство',
-
+		PROFILE_ENTERURL:'',
+		PROFILE_ENTERNAME:'',
 		PROFILE_SETTINGS: 'настройки профиля',
 		PROFILE_INFO:'информация профиля',
 		PROFILE_ENTERUSER:'введите имя пользователя',
